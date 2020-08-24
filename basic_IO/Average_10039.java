@@ -1,4 +1,5 @@
 package Beginner_InputOutput;
+// BAEKJOON #10039
 import java.util.*;
 
 public class Average_10039 {
