@@ -1,5 +1,5 @@
 package Beginner_InputOutput;
-
+// BAEKJOON #1000
 import java.io.*;
 import java.util.StringTokenizer;
 
