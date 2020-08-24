@@ -1,5 +1,5 @@
 package Beginner_InputOutput;
-
+// BAEKJOON #2588
 import java.util.Scanner;
 
 public class Product_2588 {
