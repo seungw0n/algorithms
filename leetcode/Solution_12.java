@@ -1,13 +1,14 @@
-/*
-  author: seungw0n
-  description: question 12 - first trial
-  details:
-    Runtime: 12ms, faster than 39.24% of Java submissions
-    Memory Usage: 48.1 MB, less than 13.72% of Java submissions
-  comment:
-    Need to optimize the algorithm for this question.
-    Need to change the filename (Solution.java)
+/**
+ * author: seungw0n
+ * description: question 12 - first trial
+ * details:
+ *  Runtime: 12ms, faster than 39.24% of Java submissions
+ *  Memory Usage: 48.1 MB, less than 13.72% of Java submissions
+ * comment:
+ *  Need to optimize the algorithm for this question.
+ *  Need to change the filename (Solution.java)
 */
+
 
 import java.util.ArrayList;
 
