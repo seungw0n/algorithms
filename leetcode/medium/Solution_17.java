@@ -2,42 +2,42 @@
  * author: seungw0n
  * question: Letter Combinations of a Phone Number
  * details:
- *  Runtime: 10 ms, faster than 13.00% of Java online submissions for Letter Combinations of a Phone Number.
- *  Memory Usage: 43.1 MB, less than 29.39% of Java online submissions for Letter Combinations of a Phone Number.
+ *  Runtime: 5 ms, faster than 45.22% of Java online submissions for Letter Combinations of a Phone Number.
+ *  Memory Usage: 41.4 MB, less than 79.28% of Java online submissions for Letter Combinations of a Phone Number.
  * comment:
  *  Need to change the filename (Solution.java)
 */
 
 class Solution {
-    private char[][] numbers = {{' ', ' ', ' ', ' '}, {' ', ' ', ' ', ' '}, {'a', 'b', 'c', ' '}, {'d','e','f', ' '}, {'g','h','i', ' '}, {'j','k','l',' '}, {'m','n','o', ' '}, {'p','q','r','s'}, {'t','u','v', ' '}, {'w','x','y','z'}};
-    private List<String> list;
-    private boolean[] visited;
+    private ArrayList<String> result = new ArrayList<>();
+    private char[][] letters = {
+        {' ', ' ', ' ', ' '}, {' ', ' ', ' ', ' '}, {'a', 'b', 'c', ' '},
+        {'d', 'e', 'f', ' '}, {'g', 'h', 'i', ' '}, {'j', 'k', 'l', ' '},
+        {'m', 'n', 'o', ' '}, {'p', 'q', 'r', 's'}, {'t', 'u', 'v', ' '},
+        {'w', 'x', 'y', 'z'}
+    };
     
-    private void dfs(String digits, String tail) {
-        if (digits.length() == 0) {
-            list.add(tail);
+    private void combinations(String digits, int index, String s) {
+        if (index == digits.length()) {
+            result.add(s);
             return;
         }
         
-        char c = digits.charAt(0);
+        int digit = digits.charAt(index) - '0';
         
         for (int i = 0; i < 4; i++) {
-            if (numbers[c - '0'][i] == ' ') break;
-            String temp = tail + numbers[c - '0'][i];
-            
-            if (digits.length() > 1) {
-                dfs(digits.substring(1), temp);
-            } else {
-                dfs("", temp);
+            char letter = letters[digit][i];
+            if (letter != ' ') {
+                String tail = s + letter;
+                combinations(digits, index+1, tail);
             }
-            
         }
     }
     
     public List<String> letterCombinations(String digits) {
-        list = new ArrayList<>();
-        if (digits.length() == 0) return list;
-        dfs(digits, "");
-        return list;
+        if (digits.length() == 0) return result;
+        combinations(digits, 0, "");
+        return result;
+        
     }
 }
